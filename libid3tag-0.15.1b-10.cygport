@@ -11,13 +11,14 @@ PATCH_URI="
 	mirror://portage/media-libs/${PN}/files/${PV}/${P}-tag.patch
 	mirror://portage/media-libs/${PN}/files/${PV}/${P}-unknown-encoding.patch
 	mirror://portage/media-libs/${PN}/files/${PV}/${P}-utf16.patch${P}-utf16.patch
+	0.15.1b-no-undefined.patch
+	0.15.1b-pkgconfig.patch
 "
 
-DIFF_EXCLUDES="compat.c frametype.c"
-
-abi=0
-PKG_NAMES="${PN} ${PN}${abi} ${PN}-devel"
+PKG_NAMES="${PN} ${PN}0 ${PN}-devel"
 PKG_HINTS="setup lib devel"
-PKG_CONTENTS[0]='usr/share/'
-PKG_CONTENTS[1]="usr/bin/*-${abi}.dll"
-PKG_CONTENTS[2]='usr/include/ usr/lib/'
+libid3tag0_CONTENTS="usr/bin/*-0.dll usr/share/doc/"
+libid3tag_devel_CONTENTS='usr/include/ usr/lib/'
+
+DIFF_EXCLUDES="compat.c frametype.c"
+DISTCLEANFILES="id3tag.pc.in"

@@ -10,15 +10,6 @@
  ## From the libtool documentation on library versioning:
  ##
  ## CURRENT
-@@ -90,7 +93,7 @@
- 			frametype.gperf compat.gperf genre.dat.in  \
- 			debug.c debug.h
- 
--libid3tag_la_LDFLAGS =	-version-info $(version_info)
-+libid3tag_la_LDFLAGS =	-version-info $(version_info) -no-undefined
- 
- BUILT_SOURCES =		frametype.c compat.c genre.dat
- 
 --- origsrc/libid3tag-0.15.1b/configure.ac	2004-01-23 17:22:46.000000000 -0600
 +++ src/libid3tag-0.15.1b/configure.ac	2008-05-07 23:18:16.125000000 -0500
 @@ -201,5 +201,6 @@
