@@ -1,5 +1,5 @@
 category: Audio
-requires: cygwin libid3tag0 zlib-devel
+requires: libid3tag0 zlib-devel
 external-source: libid3tag
 sdesc: "ID3 tag library (libdevel)"
 ldesc: "libid3tag is a library for reading and (eventually) writing ID3 
