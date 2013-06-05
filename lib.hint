@@ -1,6 +1,0 @@
-category: Audio
-requires: zlib0
-external-source: libid3tag
-sdesc: "ID3 tag library (runtime)"
-ldesc: "libid3tag is a library for reading and (eventually) writing ID3 
-tags, both ID3v1 and the various versions of ID3v2."

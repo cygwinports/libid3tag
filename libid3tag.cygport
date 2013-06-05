@@ -1,0 +1,31 @@
+NAME="libid3tag"
+VERSION=0.15.1b
+RELEASE=10
+CATEGORY="Audio"
+SUMMARY="ID3 tag library"
+DESCRIPTION="libid3tag is a library for reading and (eventually) writing ID3
+tags, both ID3v1 and the various versions of ID3v2."
+HOMEPAGE="http://www.underbit.com/products/mad/"
+SRC_URI="mirror://sourceforge/mad/${NAME}-${VERSION}.tar.gz"
+# the last one is obviously misnamed and may be renamed in the future
+PATCH_URI="
+	mirror://portage/media-libs/${NAME}/files/${VERSION}/${NAME}-${VERSION}-64bit-long.patch
+	mirror://portage/media-libs/${NAME}/files/${VERSION}/${NAME}-${VERSION}-a_capella.patch
+	mirror://portage/media-libs/${NAME}/files/${VERSION}/${NAME}-${VERSION}-compat.patch
+	mirror://portage/media-libs/${NAME}/files/${VERSION}/${NAME}-${VERSION}-file-write.patch
+	mirror://portage/media-libs/${NAME}/files/${VERSION}/${NAME}-${VERSION}-fix_overflow.patch
+	mirror://portage/media-libs/${NAME}/files/${VERSION}/${NAME}-${VERSION}-tag.patch
+	mirror://portage/media-libs/${NAME}/files/${VERSION}/${NAME}-${VERSION}-unknown-encoding.patch
+	mirror://portage/media-libs/${NAME}/files/${VERSION}/${NAME}-${VERSION}-utf16.patch${NAME}-${VERSION}-utf16.patch
+	0.15.1b-no-undefined.patch
+	0.15.1b-pkgconfig.patch
+"
+
+PKG_NAMES="${NAME}0 ${NAME}-devel"
+libid3tag0_CONTENTS="usr/bin/*-0.dll usr/share/doc/"
+libid3tag_devel_CONTENTS='usr/include/ usr/lib/'
+
+DIFF_EXCLUDES="compat.c frametype.c"
+DISTCLEANFILES="id3tag.pc.in"
+
+WANT_AUTOMAKE=1.9
